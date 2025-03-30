@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  :root {
+    --color-bg: #201F1E;
+    --color-accent: #FE4F2D;
+    --color-subtext: #D9D598;
+  }
+}
+
+@layer base {
+  @font-face {
+    font-family: 'Minecraft';
+    src: url('./assets/fonts/MinecraftTen-VGOR.ttf') format('truetype');
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'ShuttleBlock';
+    src: url('./assets/fonts/Shuttleblock-NormalBold.ttf') format('truetype');
+    font-display: swap;
+    font-weight: bold;
+  }
+
+  @font-face {
+    font-family: 'ShuttleBlock';
+    src: url('./assets/fonts/Shuttleblock-NormalMedium.ttf') format('truetype');
+    font-display: swap;
+    font-weight: 500;
+  }
+}
+
+
