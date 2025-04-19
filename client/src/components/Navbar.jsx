@@ -54,9 +54,7 @@ export default function Navbar({ lenis }) {
         >
           CONTACT ME
         </button>
-        <Link to="/resume" className="hover:text-white transition duration-300">
-          RESUME
-        </Link>
+      
       </div>
 
       {/* Mobile hamburger */}
