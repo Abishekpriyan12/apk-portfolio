@@ -1,16 +1,38 @@
+/* src/index.css (or wherever you import Tailwind) */
+
+/* 1) Import Outfit before the Tailwind layers */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @import "tailwindcss";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* 2) Your existing keyframes & root vars… */
 html {
-  scroll-behavior: smooth;
+  scroll‑behavior: smooth;
+}
+
+@keyframes textPopGradient {
+  0%,100% {
+    -webkit-text-fill-color: white;
+    background-image: none;
+  }
+  50% {
+    background-image: linear-gradient(90deg, #FE4F2D, #FFC700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.animate-text-pop {
+  animation: textPopGradient 0.6s ease-out forwards;
 }
 
 @layer base {
   :root {
-    --color-bg: #201F1E;
+    --color-bg: #111011;
     --color-accent: #FE4F2D;
     --color-subtext: #D9D598;
   }
@@ -19,23 +41,24 @@ html {
 @layer base {
   @font-face {
     font-family: 'Minecraft';
-    src: url('./assets/fonts/MinecraftTen-VGOR.ttf') format('truetype');
+    src: url('./assets/fonts/MinecraftTen‑VGOR.ttf') format('truetype');
     font-display: swap;
   }
-
   @font-face {
     font-family: 'ShuttleBlock';
-    src: url('./assets/fonts/Shuttleblock-NormalBold.ttf') format('truetype');
+    src: url('./assets/fonts/Shuttleblock‑NormalBold.ttf') format('truetype');
     font-display: swap;
     font-weight: bold;
   }
-
   @font-face {
     font-family: 'ShuttleBlock';
-    src: url('./assets/fonts/Shuttleblock-NormalMedium.ttf') format('truetype');
+    src: url('./assets/fonts/Shuttleblock‑NormalMedium.ttf') format('truetype');
     font-display: swap;
     font-weight: 500;
   }
+  
+  /* 3) Set Outfit as your default body font (optional) */
+  body {
+    font-family: 'Outfit', sans-serif;
+  }
 }
-
-
