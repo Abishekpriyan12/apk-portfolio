@@ -5,7 +5,7 @@ import { useQuery } from "@apollo/client";
 import { GET_PROFILE, GET_PROJECTS } from "./graphql/queries";
 
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Footer from "./components/footer";
 import SideSocialIcons from "./components/SideSocialIcons";
 import FullPageLoader from "./components/FullPageLoader";
 
