@@ -3,7 +3,7 @@ import React, { useEffect, useRef, Suspense, lazy } from "react";
 import Lenis from "@studio-freight/lenis";
 
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Footer from "./components/footer";
 import SideSocialIcons from "./components/SideSocialIcons";
 
 // Lazy load each section
