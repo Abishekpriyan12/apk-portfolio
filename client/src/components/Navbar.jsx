@@ -111,13 +111,7 @@ export default function Navbar({ lenis }) {
             >
               CONTACT ME
             </button>
-            <Link
-              to="/resume"
-              onClick={() => setOpen(false)}
-              className="hover:text-white transition duration-300"
-            >
-              RESUME
-            </Link>
+          
           </div>
         )}
       </div>
