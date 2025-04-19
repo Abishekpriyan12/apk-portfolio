@@ -1,0 +1,179 @@
+{
+  "profile": {
+    "firstName": "Abishek Priyan",
+    "lastName": "Kabilan",
+    "tagline": "Web Designer & Developer",
+    "socialLinks": [
+      { "platform": "GitHub", "url": "https://github.com/Abishekpriyan12" },
+      { "platform": "LinkedIn", "url": "https://www.linkedin.com/in/abishek-priyan/" },
+      { "platform": "Instagram", "url": "https://www.instagram.com/a.b.i._?igsh=cXF6bHNiYnBrdzF5&utm_source=qr" }
+    ],
+    "resumeUrl": "https://example.com/path-to-resume.pdf",
+    "education": [
+      {
+        "dateRange": "Dec 2023 – Dec 2024",
+        "title": "Post Graduate Diploma in Web Development",
+        "description": "Expected Graduation: Dec 2024",
+        "institution": "Conestoga College"
+      },
+      {
+        "dateRange": "2019 – May 2022",
+        "title": "Bachelor in Computer Application",
+        "description": "Graduated May 2022",
+        "institution": "University of Madras"
+      }
+    ],
+    "experience": [
+      {
+        "dateRange": "Nov 2024 – Present",
+        "role": "Full Stack Developer Intern",
+        "company": "Koralbyte Technologies",
+        "companyUrl": "https://koralbyte.com/",
+        "logo": "https://res.cloudinary.com/dzqek0sir/image/upload/v1745032230/logo-koral-tech-small-removebg-preview_baqrtm.png",
+        "location": "Toronto, Ontario",
+        "summary": "Interned on the COCOA B2B procurement platform, delivering new features and performance optimizations.",
+        "bullets": [
+          "Collaborated with the team to design, develop, and deploy new COCOA features, improving operational efficiency by 20%.",
+          "Worked across front‑end and back‑end to ensure seamless UX for 1000+ businesses.",
+          "Optimized performance and supported API development, reducing load times by 30%.",
+          "Participated in design decisions and code reviews to enhance scalability and maintainability.",
+          "Integrated UI/UX designs, driving a 15% increase in user engagement."
+        ],
+        "techStack": [
+          "JavaScript",
+          "React",
+          "Node.js",
+          "Express.js",
+          "PostgreSQL",
+          "AWS Lambda",
+          "AWS S3",
+          "Docker",
+          "GraphQL",
+          "RESTful APIs"
+        ]
+      },
+      {
+        "dateRange": "2021 – 2023",
+        "role": "Web Developer",
+        "company": "Likewize India Shared Services",
+        "companyUrl": "https://www.likewize.com/",
+        "logo": "https://res.cloudinary.com/dzqek0sir/image/upload/v1745032057/idm7P7mzMW_logos_c9as3b.jpg",
+        "location": "Chennai, India",
+        "summary": "Built full‑stack logistics and NGO platforms, improving return processing and volunteer onboarding.",
+        "bullets": [
+          "Contributed to GRS logistics platform, increasing daily return processing by 25%.",
+          "Participated in agile ceremonies to ensure timely feature releases.",
+          "Developed RESTful APIs with Node.js & Express to automate return processes and cut costs by 15%.",
+          "Led Angular/CSS front‑end work, boosting user satisfaction by 10%.",
+          "Developed an NGO elderly‑care app, reducing manual data entry by 50%."
+        ],
+        "techStack": [
+          "Angular",
+          "Node.js",
+          "Express.js",
+          "PostgreSQL",
+          "AWS Lambda",
+          "AWS S3",
+          "AWS CloudWatch",
+          "Azure DevOps",
+          "Docker",
+          "Adobe XD"
+        ]
+      }
+    ]
+    ,
+    "certifications": [
+      {
+        "title": "Full Stack Web Development",
+        "authority": "FreeCodeCamp",
+        "year": 2022
+      },
+      {
+        "title": "UI/UX Design Fundamentals",
+        "authority": "Coursera",
+        "year": 2023
+      }
+    ]
+  },
+  "projects": [
+    {
+      "title": "TOSS THE TURF",
+      "tagline": "Toss the Turf – Turf Management Platform",
+      "description": "A MERN‑stack web app for managing turf bookings and hosting local sports matches.",
+      "features": [
+        "Developed a MERN stack web application to manage turf bookings, increasing engagement by 25% in 6 months.",
+        "Built the front‑end with React & Redux for real‑time booking and user interaction, improving efficiency by 20%.",
+        "Created RESTful APIs with Node.js & Express; managed data in MongoDB.",
+        "Maintained a CI pipeline with Jenkins for high code quality and rapid deployments.",
+        "Provisioned cloud infrastructure with Terraform, reducing costs by 15%.",
+        "Implemented SEO best practices to boost site visibility.",
+        "Authored reusable UI components (header, footer, buttons, cards, slider)."
+      ],
+      "technologies": [
+        "React",
+        "Redux",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Jenkins",
+        "Terraform",
+        "MERN",
+        "SEO"
+      ],
+      "category": "WEB_DEV",
+      "imageUrl": "https://res.cloudinary.com/dzqek0sir/image/upload/v1744925653/tosstheturf_mwbljf.png",
+      "projectUrl": "https://www.tosstheturf.com/",
+      "videoUrl": "https://res.cloudinary.com/dzqek0sir/video/upload/v1744956603/Promo_Video_nm0wya.mp4"
+    },
+    {
+      "title": "EMS",
+      "tagline": "Employee Management System",
+      "description": "A full‑featured web app for employee CRUD operations and authentication.",
+      "features": [
+        "Implemented full CRUD (create, read, update, delete) on employee records.",
+        "Added role‑based access control with JWT authentication.",
+        "Designed a responsive dashboard with real‑time data filters.",
+        "Exported and imported employee data via CSV.",
+        "Integrated email notifications for onboarding and offboarding."
+      ],
+      "technologies": [
+        "React",
+        "Tailwind CSS",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "JSON Web Tokens",
+        "Chart.js"
+      ],
+      "category": "WEB_DEV",
+      "imageUrl": "https://res.cloudinary.com/dzqek0sir/image/upload/v1744926229/ems_yc9aio.png",
+      "projectUrl": "https://github.com/AbishekPriyan/ems",
+      "videoUrl": ""
+    },
+    {
+      "title": "Tap It",
+      "tagline": "Tap It – Personal Finance Tracker",
+      "description": "A React Native app for instant money transfers and transaction tracking in Canada.",
+      "features": [
+        "Designed UI/UX flows in Figma and implemented them in React Native.",
+        "Integrated Interac e‑Transfer endpoints for instant peer‑to‑peer payments.",
+        "Built custom contact book with live balance checks and QR‑code scanning.",
+        "Stored transaction history locally with Redux Persist.",
+        "Implemented biometric authentication for secure access."
+      ],
+      "technologies": [
+        "React Native",
+        "Redux",
+        "Interac e‑Transfer API",
+        "Expo",
+        "TypeScript",
+        "Firebase Auth",
+        "Tailwind CSS (RNTailwind)"
+      ],
+      "category": "WEB_DEV",
+      "imageUrl": "https://res.cloudinary.com/dzqek0sir/image/upload/v1744948242/Frame_2_v6horl.png",
+      "projectUrl": "",
+      "videoUrl": ""
+    }
+  ]
+}
