@@ -17,10 +17,28 @@ mongoose.connect(process.env.MONGODB_URI, {
 .then(() => console.log('MongoDB connected'))
 .catch(err => console.error('MongoDB connection error:', err));
 
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  /\.vercel\.app$/,
+];
+
 async function startServer() {
   // 2. Create Express app
   const app = express();
-  app.use(cors()); // If your front end is at a different domain, enable CORS
+  app.use(cors({
+    origin: (origin, callback) => {
+      // allow requests with no origin (e.g. mobile apps, curl)
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.some(o => typeof o === 'string'
+          ? o === origin
+          : o.test(origin)
+      )) {
+        return callback(null, true);
+      }
+      callback(new Error(`CORS blocked for ${origin}`));
+    },
+    credentials: true,
+  })); // If your front end is at a different domain, enable CORS
 
   // 3. Apollo Server
   const server = new ApolloServer({

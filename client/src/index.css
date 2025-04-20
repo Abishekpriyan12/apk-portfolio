@@ -61,4 +61,37 @@ html {
   body {
     font-family: 'Outfit', sans-serif;
   }
+
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* then at the bottom: */
+@layer utilities {
+  .text-neon {
+    color: #FE4F2D;
+  }
+  @keyframes neon-flicker {
+    0%, 100% {
+      text-shadow:
+        0 0 2px #FE4F2D,
+        0 0 6px #FE4F2D,
+        0 0 12px #FE4F2D,
+        0 0 24px rgba(254,79,45,0.5);
+      opacity: 1;
+    }
+    50% {
+      text-shadow:
+        0 0 1px #FE4F2D,
+        0 0 4px #FE4F2D,
+        0 0 8px #FE4F2D,
+        0 0 16px rgba(254,79,45,0.3);
+      opacity: 0.8;
+    }
+  }
+  .animate-neon-flicker {
+    animation: neon-flicker 1.8s infinite ease-in-out;
+  }
 }
