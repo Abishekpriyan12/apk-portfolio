@@ -41,20 +41,32 @@ html {
 @layer base {
   @font-face {
     font-family: 'Minecraft';
-    src: url('./assets/fonts/MinecraftTen‑VGOR.ttf') format('truetype');
+    src: url('/fonts/minecraft_font.ttf') format('truetype');
     font-display: swap;
   }
   @font-face {
-    font-family: 'ShuttleBlock';
-    src: url('./assets/fonts/Shuttleblock‑NormalBold.ttf') format('truetype');
-    font-display: swap;
+    font-family: 'Minecraft';
+    src: url('/fonts/MinecraftTen‑VGORe.ttf') format('truetype');
     font-weight: bold;
+    font-display: swap;
   }
   @font-face {
     font-family: 'ShuttleBlock';
-    src: url('./assets/fonts/Shuttleblock‑NormalMedium.ttf') format('truetype');
-    font-display: swap;
+    src: url('/fonts/Shuttleblock‑NormalMedium.ttf') format('truetype');
     font-weight: 500;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'ShuttleBlock';
+    src: url('/fonts/Shuttleblock‑NormalDemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'ShuttleBlock';
+    src: url('/fonts/Shuttleblock‑NormalBold.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
   }
   
   /* 3) Set Outfit as your default body font (optional) */
@@ -64,9 +76,6 @@ html {
 
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 /* then at the bottom: */
 @layer utilities {
