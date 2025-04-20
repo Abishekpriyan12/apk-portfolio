@@ -42,30 +42,44 @@ html {
   @font-face {
     font-family: 'Minecraft';
     src: url('/fonts/minecraft_font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
     font-display: swap;
   }
+
+  /* Minecraft Ten Bold (VGORe) */
   @font-face {
     font-family: 'Minecraft';
-    src: url('/fonts/MinecraftTen‑VGORe.ttf') format('truetype');
+    src: url('/fonts/MinecraftTenVGORe.ttf') format('truetype');
     font-weight: bold;
+    font-style: normal;
     font-display: swap;
   }
+
+  /* ShuttleBlock Medium */
   @font-face {
     font-family: 'ShuttleBlock';
-    src: url('/fonts/Shuttleblock‑NormalMedium.ttf') format('truetype');
+    src: url('/fonts/ShuttleblockNormalMedium.ttf') format('truetype');
     font-weight: 500;
+    font-style: normal;
     font-display: swap;
   }
+
+  /* ShuttleBlock DemiBold */
   @font-face {
     font-family: 'ShuttleBlock';
-    src: url('/fonts/Shuttleblock‑NormalDemiBold.ttf') format('truetype');
+    src: url('/fonts/ShuttleblockNormalDemiBold.ttf') format('truetype');
     font-weight: 600;
+    font-style: normal;
     font-display: swap;
   }
+
+  /* ShuttleBlock Bold */
   @font-face {
     font-family: 'ShuttleBlock';
-    src: url('/fonts/Shuttleblock‑NormalBold.ttf') format('truetype');
+    src: url('/fonts/ShuttleblockNormalBold.ttf') format('truetype');
     font-weight: 700;
+    font-style: normal;
     font-display: swap;
   }
   

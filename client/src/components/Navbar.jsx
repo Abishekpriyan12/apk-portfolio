@@ -29,7 +29,7 @@ export default function Navbar({ lenis }) {
       </div>
 
       {/* Desktop links */}
-      <div className="hidden md:flex font-['Minecraft'] text-xs tracking-normal gap-6">
+      <div className="hidden md:flex font-[Minecraft] text-xs tracking-normal gap-6">
         <button
           onClick={() => scrollTo("hero")}
           className="hover:text-white transition duration-300"
