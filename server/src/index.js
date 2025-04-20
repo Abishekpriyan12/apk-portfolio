@@ -17,6 +17,8 @@ mongoose.connect(process.env.MONGODB_URI, {
 .then(() => console.log('MongoDB connected'))
 .catch(err => console.error('MongoDB connection error:', err));
 
+const FRONTEND_URL = process.env.FRONTEND_URL;
+
 const allowedOrigins = [
   process.env.FRONTEND_URL,
   /\.vercel\.app$/,
@@ -26,7 +28,7 @@ async function startServer() {
   // 2. Create Express app
   const app = express();
   app.use(cors({
-    origin: true,
+    origin:FRONTEND_URL ,
     credentials: true
   }));
  // If your front end is at a different domain, enable CORS
