@@ -11,6 +11,7 @@ import resolvers from './resolvers/index.js';
 dotenv.config();
 
 // 1) Connect to MongoDB
+ingoreDeprecation: true // remove this if not needed
 mongoose
   .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
@@ -22,16 +23,27 @@ mongoose
 async function startServer() {
   const app = express();
 
-  // 2) Apply CORS *once*, allowing only your frontend origin
-  //    Make sure you have set FRONTEND_URL in Render’s Env Vars.
-  const FRONTEND_URL = process.env.FRONTEND_URL;
+  // 2) CORS: allow both your deployed frontend and local dev URLs
+  const FRONTEND_URL = process.env.FRONTEND_URL; // e.g. 'https://your-render-app.com'
+  const CRA_URL      = 'http://localhost:3000';    // Create React App default
+  const VITE_URL     = 'http://localhost:5173';    // Vite dev server default
+
   if (!FRONTEND_URL) {
     throw new Error('Missing FRONTEND_URL environment variable');
   }
 
+  const allowedOrigins = [FRONTEND_URL, CRA_URL, VITE_URL];
+
   app.use(
     cors({
-      origin: FRONTEND_URL,
+      origin: (origin, callback) => {
+        // allow requests with no origin (mobile apps, curl, Postman, etc.)
+        if (!origin) return callback(null, true);
+        if (allowedOrigins.includes(origin)) {
+          return callback(null, true);
+        }
+        callback(new Error(`CORS policy violation: ${origin} not allowed`));
+      },
       credentials: true,
     })
   );
@@ -44,17 +56,13 @@ async function startServer() {
   });
   await server.start();
 
-  // 4) Tell Apollo *not* to re‑apply CORS
-  server.applyMiddleware({
-    app,
-    path: '/graphql',
-    cors: false,
-  });
+  // 4) Apply Apollo middleware without re-applying CORS
+  server.applyMiddleware({ app, path: '/graphql', cors: false });
 
-  // 5) Start your HTTP server
+  // 5) Start HTTP server
   const PORT = process.env.PORT || 4000;
   app.listen(PORT, () =>
-    console.log(`🚀 GraphQL ready at https://<your‑render‑url>${server.graphqlPath}`)
+    console.log(`🚀 GraphQL ready at http://localhost:${PORT}${server.graphqlPath}`)
   );
 }
 
