@@ -1,15 +1,12 @@
-// src/components/ProjectsSection.jsx
 import React, { useRef, useState, useEffect } from "react";
-import { useQuery } from "@apollo/client";
 import { motion } from "framer-motion";
 import { Origami } from "lucide-react";
-import { GET_PROJECTS } from "../graphql/queries";
 import TechPill from "../components/TechPill";
 import { TECH_ICON_MAP } from "../components/icon.js";
+import siteData from "../data/siteData.json";
 
 export default function ProjectsSection() {
-  const { data, loading, error } = useQuery(GET_PROJECTS);
-  const projects = data?.getProfile?.projects || [];
+  const projects = siteData.projects;
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [currentVideoUrl, setCurrentVideoUrl] = useState("");
 
@@ -32,9 +29,6 @@ export default function ProjectsSection() {
     slides.forEach((slide) => observer.observe(slide));
     return () => slides.forEach((slide) => observer.unobserve(slide));
   }, [projects]);
-
-  if (loading) return <p className="text-center text-white">Loading…</p>;
-  if (error) return <p className="text-center text-red-500">Error!</p>;
 
   function openVideo(url) {
     setCurrentVideoUrl(url);
@@ -139,21 +133,7 @@ export default function ProjectsSection() {
                             <h3 className="text-2xl font-semibold">
                               {project.tagline || project.title}
                             </h3>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              className="lucide lucide-arrow-right size-6"
-                            >
-                              <path d="M5 12h14" />
-                              <path d="m12 5 7 7-7 7" />
-                            </svg>
+                            <Origami className="size-6" />
                           </div>
 
                           {/* Screenshot */}
@@ -256,14 +236,12 @@ export default function ProjectsSection() {
                     </a>
                   )}
                   {projects[currentIdx].videoUrl && (
-                    <a
-                      href={projects[currentIdx].videoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      onClick={() => openVideo(projects[currentIdx].videoUrl)}
                       className="inline-block ml-4 px-6 py-2 border border-blue-500 text-blue-500 font-medium rounded-full hover:bg-blue-500 hover:text-white transition"
                     >
-                      View Code
-                    </a>
+                      View Video
+                    </button>
                   )}
                 </div>
               </motion.div>

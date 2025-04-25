@@ -1,15 +1,10 @@
 import React from "react";
-import { useQuery } from "@apollo/client";
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
-import { GET_PROFILE } from "../graphql/queries";
+import siteData from "../data/siteData.json";
 
 export default function ExperienceSection() {
-  const { data, loading, error } = useQuery(GET_PROFILE);
-  if (loading) return <p className="text-center text-white">Loading…</p>;
-  if (error)   return <p className="text-center text-red-500">Error!</p>;
-
-  const experience = data.getProfile.experience;
+  const experience = siteData.profile.experience;
 
   return (
     <motion.section
