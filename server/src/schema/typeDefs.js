@@ -97,6 +97,7 @@ const typeDefs = gql`
       certifications: [CertificationInput!]
     ): Profile
 
+
     updateProfile(
       _id:            ID!
       firstName:      String
@@ -111,7 +112,11 @@ const typeDefs = gql`
 
     createProject(input: CreateProjectInput!): Project
     updateProject(_id: ID!, input: UpdateProjectInput!): Project
+
+    sendMessage(name: String!, email: String!, message: String!): Boolean!
   }
+
+  
 
   input SocialLinkInput {
     platform: String!

@@ -1,6 +1,32 @@
 // server/src/resolvers/index.js
+
+import dotenv from 'dotenv';
+dotenv.config();
+
 import Profile from '../models/Profile.js';
 import Project from '../models/Project.js';
+import nodemailer from 'nodemailer';
+
+
+
+const transporter = nodemailer.createTransport({
+  host: 'smtp.gmail.com',  // explicitly Gmail
+  port: 465,               // implicit‐SSL
+  secure: true,
+  auth: {
+    user: process.env.SMTP_USER,  // your.full@gmail.com
+    pass: process.env.SMTP_PASS,  // 16-char App Password
+  },
+  logger: true,
+  debug: true,
+});
+
+// Immediately verify connectivity:
+transporter.verify(err => {
+  if (err) console.error('✘ SMTP verify failed:', err);
+  else     console.log('✔ SMTP ready (smtp.gmail.com:465)');
+});
+
 
 const resolvers = {
   Query: {
@@ -51,6 +77,22 @@ const resolvers = {
         certifications
       });
       return await newProfile.save();
+    },
+    sendMessage: async (_, { name, email, message }) => {
+      console.log('📨 sendMessage called:', { name, email, message });
+      try {
+        const info = await transporter.sendMail({
+          from: `"Contact Form" <${process.env.SMTP_USER}>`,
+          to: process.env.MAIL_TO,
+          subject: `New message from ${name}`,
+          text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
+        });
+        console.log('✅ Mail sent:', info.messageId);
+        return true;
+      } catch (err) {
+        console.error('✘ sendMail error:', err);
+        return false;
+      }
     },
 
     // updateProfile updates all those fields too

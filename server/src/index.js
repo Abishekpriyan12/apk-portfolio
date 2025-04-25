@@ -5,10 +5,16 @@ import { ApolloServer } from 'apollo-server-express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
-import typeDefs from './schema/typeDefs.js';
-import resolvers from './resolvers/index.js';
 
 dotenv.config();
+
+
+import typeDefs from './schema/typeDefs.js';
+import resolvers from './resolvers/index.js';
+import nodemailer from 'nodemailer';
+
+
+
 
 // 1) Connect to MongoDB
 ingoreDeprecation: true // remove this if not needed
